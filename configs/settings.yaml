@@ -16,15 +16,18 @@ service:
     broker: kafka:9092
     topic: go-anything
     consumerGroup: go-anything-consumer-group
+  es:
+    address: es:9200
+    user: ""
+    password: ""
   email:
-    sender: "xiewei@tkzc31.onexmail.com"
-    auth: "TWVuZzE5OTMwNzE5Cg=="
+    sender: "1156143589@qq.com"
+    auth: "bWVuZ3d1MTliYW5nNTg1MjA="
     receivers:
-      - "1156143589@qq.com"
-      - "1344439822@qq.com"
+      - "xiewei@tkzc31.onexmail.com"
 dev:
   mysql:
-    port: "3306"
+    port: "3307"
     db: go-anything
     user: root
     passwd: adminMysql
@@ -42,3 +45,7 @@ dev:
     auth: "bWVuZ3d1MTliYW5nNTg1MjA="
     receivers:
       - "xiewei@tkzc31.onexmail.com"
+  es:
+    address: "127.0.0.1:9200"
+    user: ""
+    password: ""

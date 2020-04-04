@@ -2,6 +2,8 @@ package router
 
 import (
 	"fmt"
+	"github.com/wuxiaoxiaoshen/go-anything/src/holiday"
+	"github.com/wuxiaoxiaoshen/go-anything/src/zhihu"
 
 	"github.com/wuxiaoxiaoshen/go-anything/src/k8s"
 
@@ -17,9 +19,9 @@ import (
 
 	"github.com/wuxiaoxiaoshen/go-anything/src/Railway12306"
 
-	"github.com/kataras/iris"
-	"github.com/kataras/iris/middleware/logger"
-	"github.com/kataras/iris/middleware/recover"
+	"github.com/kataras/iris/v12"
+	"github.com/kataras/iris/v12/middleware/logger"
+	"github.com/kataras/iris/v12/middleware/recover"
 )
 
 func newApp() *iris.Application {
@@ -37,6 +39,8 @@ func register(app *iris.Application) {
 	app.PartyFunc("/v1/api/bing", Bing.RegisterBing)
 	app.PartyFunc("/v1/api/tt", fund.RegisterFund)
 	app.PartyFunc("/v1/api/k8s", k8s.RegisterForK8s)
+	app.PartyFunc("/v1/api/zhihu", zhihu.RegisterForZhiHu)
+	app.PartyFunc("/v1/api/gov", holiday.RegisterForHoliday)
 
 }
 func Run(port string) {
